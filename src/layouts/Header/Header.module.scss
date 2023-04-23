@@ -1,0 +1,64 @@
+@import 'src/styles/sass/base/base';
+@import 'src/styles/sass/abstract/constans.scss';
+@import 'src/styles/sass/abstract/mixins.scss';
+@import 'src/styles/sass/abstract/placeholders.scss';
+
+.header {
+  padding: 19px 20px;
+  margin: 0 auto 52px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+  @include media-tablet {
+    padding: 0 61px;
+  }
+
+  &_post {
+    margin: 0 auto 76px;
+  }
+
+  &__container {
+    @include flex(row, space-between, center, nowrap);
+  }
+
+  &__logo {
+    @include flex(row, center, center, nowrap);
+  }
+
+  &__hamburger {
+    @include media-tablet {
+      display: none;
+    }
+  }
+
+  &__navigation {
+    display: none;
+    @include media-tablet {
+      display: block;
+      flex-shrink: 2;
+    }
+  }
+}
+
+.navigation {
+  margin: 0;
+  padding: 0;
+  @include flex(row, space-between, center, nowrap);
+  gap: 36px;
+
+  &__item {
+    list-style-type: none;
+    padding: 57px 0;
+    border-bottom: solid transparent 2px;
+
+    &:hover {
+      border-bottom: solid $color-dark 2px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-dark;
+    @extend %font-tertiary;
+    @include font(normal, 500, 2.0rem, 1.4rem);
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,25 @@
+@import 'src/styles/sass/base/base';
+@import 'src/styles/sass/abstract/constans.scss';
+@import 'src/styles/sass/abstract/mixins.scss';
+@import 'src/styles/sass/abstract/placeholders.scss';
+
+.logo__ref {
+    @include flex(row, center, center, nowrap);
+    width: 217px;
+    height: 20px;
+
+@include media-tablet {
+    width: 396px;
+    height: 38px;
+}
+}
+
+.logo__img {
+    width: 100%;
+    height: 20px;
+
+@include media-tablet {
+    width: 100%;
+    height: 38px;
+}
+}
