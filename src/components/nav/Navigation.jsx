@@ -2,29 +2,23 @@ import React from 'react';
 import style from './Navigation.module.scss'
 
 export function Navigation() {
+    const links = [
+        {title: 'Blog', href: '#'},
+        {title: 'About', href: '#about'},
+        {title: 'Links', href: '#links'},
+        {title: 'Projects', href: '#projects'},
+    ]
 
     return (
+
         <ul className={style.navigation}>
-            <li className={style.navigation__item}>
-                <a className={style.navigation__link} href="#">
-                    Blog
-                </a>
-            </li>
-            <li className={style.navigation__item}>
-                <a className={style.navigation__link} href="#">
-                    About
-                </a>
-            </li>
-            <li className={style.navigation__item}>
-                <a className={style.navigation__link} href="#">
-                    Links
-                </a>
-            </li>
-            <li className={style.navigation__item}>
-                <a className={style.navigation__link} href="#">
-                    Projects
-                </a>
-            </li>
+            {links.map(m =>
+                <li className={style.navigation__item}>
+                    <a className={style.navigation__link} href={m.href}>
+                        {m.title}
+                    </a>
+                </li>
+            )}
         </ul>
     );
 }

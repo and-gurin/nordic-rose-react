@@ -5,9 +5,7 @@ export function Hamburger() {
 
     return (
         <div className={style.hamburger}>
-            <span className={style.hamburger__line}></span>
-            <span className={style.hamburger__line}></span>
-            <span className={style.hamburger__line}></span>
+            {[1, 2, 3].map((item)=><span className={style.hamburger__line}></span>)}
         </div>
     );
 }

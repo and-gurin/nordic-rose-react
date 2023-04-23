@@ -6,12 +6,14 @@ import {Navigation} from "../../components/nav/Navigation";
 import {Hamburger} from "../../components/hamburger/Hamburger";
 
 export function Header() {
+    const width = 217;
+    const height = 20;
 
     return (
         <header className={style.header}>
             <div className={style.header__container}>
                 <div className={style.header__logo}>
-                    <Logo img={logo_dark}/>
+                    <Logo img={logo_dark} width={width} height={height}/>
                 </div>
                 <div className={style.header__hamburger}>
                     <Hamburger/>
