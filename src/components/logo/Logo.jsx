@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import style from './Logo.module.scss'
 
 export function Logo(props) {
