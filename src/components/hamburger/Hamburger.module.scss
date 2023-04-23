@@ -1,0 +1,29 @@
+@import 'src/styles/sass/base/base';
+@import 'src/styles/sass/abstract/constans.scss';
+@import 'src/styles/sass/abstract/mixins.scss';
+@import 'src/styles/sass/abstract/placeholders.scss';
+
+.hamburger__line {
+  display: block;
+  background-color: $color-dark;
+  height: 2px;
+  width: 24px;
+  margin: 5px auto;
+  transition: 0.2s;
+}
+
+.hamburger.active {
+  .hamburger__line {
+    &:nth-child(1) {
+      transform: translateY(12px) rotate(45deg);
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+    }
+
+    &:nth-child(3) {
+      transform: translateY(-12px) rotate(-45deg);
+    }
+  }
+}
