@@ -1,24 +1,30 @@
 import React from 'react';
 import style from './Navigation.module.scss'
 
-export function Navigation() {
-    const links = [
-        {title: 'Blog', href: '#'},
-        {title: 'About', href: '#about'},
-        {title: 'Links', href: '#links'},
-        {title: 'Projects', href: '#projects'},
-    ]
+const links = [
+    {id: 1, title: 'Blog', href: '#'},
+    {id: 2, title: 'About', href: '#about'},
+    {id: 3, title: 'Links', href: '#links'},
+    {id: 4, title: 'Projects', href: '#projects'},
+]
 
+function NavItem() {
     return (
-
-        <ul className={style.navigation}>
-            {links.map(m =>
-                <li className={style.navigation__item}>
-                    <a className={style.navigation__link} href={m.href}>
-                        {m.title}
+        links.map(item =>
+                <li key={item.id} className={style.navigation__item}>
+                    <a className={style.navigation__link} href={item.href}>
+                        {item.title}
                     </a>
                 </li>
-            )}
+            )
+    )
+
+}
+
+export function Navigation() {
+    return (
+        <ul className={style.navigation}>
+            <NavItem/>
         </ul>
     );
 }
