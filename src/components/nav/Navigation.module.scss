@@ -1,0 +1,29 @@
+@import 'src/styles/sass/base/base';
+@import 'src/styles/sass/abstract/constans.scss';
+@import 'src/styles/sass/abstract/mixins.scss';
+@import 'src/styles/sass/abstract/placeholders.scss';
+
+.navigation {
+  margin: 0;
+  padding: 0;
+  @include flex(row, space-between, center, nowrap);
+  gap: 36px;
+
+  &__item {
+    list-style-type: none;
+    padding: 57px 0;
+    border-bottom: solid transparent 2px;
+
+    &:hover {
+      border-bottom: solid $color-dark 2px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-dark;
+    @extend %font-tertiary;
+    @include font(normal, 500, 2.0rem, 1.4rem);
+    text-transform: uppercase;
+  }
+}
