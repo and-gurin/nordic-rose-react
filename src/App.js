@@ -1,13 +1,13 @@
 import React from "react";
 import {Header} from "./layouts/Header/Header";
-import {About} from "./components/about/about";
+import {Main} from "./layouts/Main/Main";
 
 export function App() {
 
     return (
         <div>
             <Header/>
-            <About/>
+            <Main/>
         </div>
     );
 }
