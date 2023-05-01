@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './Articles.module.scss';
-import article_1_small from '../../assets/image/articles/article-1-304w.png';
-import article_2_small from '../../assets/image/articles/article-2-304w.png';
-import article_3_small from '../../assets/image/articles/article-3-304w.png';
-import article_4_small from '../../assets/image/articles/article-4-304w.png';
-import article_1_large from '../../assets/image/articles/article-1-335w.png';
-import article_2_large from '../../assets/image/articles/article-2-335w.png';
-import article_3_large from '../../assets/image/articles/article-3-335w.png';
-import article_4_large from '../../assets/image/articles/article-4-335w.png';
+import article_1_small from 'assets/image/articles/article-1-304w.png';
+import article_2_small from 'assets/image/articles/article-2-304w.png';
+import article_3_small from 'assets/image/articles/article-3-304w.png';
+import article_4_small from 'assets/image/articles/article-4-304w.png';
+import article_1_large from 'assets/image/articles/article-1-335w.png';
+import article_2_large from 'assets/image/articles/article-2-335w.png';
+import article_3_large from 'assets/image/articles/article-3-335w.png';
+import article_4_large from 'assets/image/articles/article-4-335w.png';
 
 const cards = [
     {
@@ -15,36 +15,28 @@ const cards = [
         title: 'Here are some things you should know regarding how we work',
         img_small: article_1_small,
         img_large: article_1_large,
-        alt() {
-            return this.title.split(' ').slice(0, 3).join('_')
-        }
+        alt: 'article_1'
     },
     {
         id: '2',
         title: 'Here are some things you should know regarding how we work',
         img_small: article_2_small,
         img_large: article_2_large,
-        alt() {
-            return this.title.split(' ').slice(0, 3).join('_')
-        }
+        alt: 'article_2'
     },
     {
         id: '3',
         title: 'Here are some things you should know regarding how we work',
         img_small: article_3_small,
         img_large: article_3_large,
-        alt() {
-            return this.title.split(' ').slice(0, 3).join('_')
-        }
+        alt: 'article_3'
     },
     {
         id: '4',
         title: 'Here are some things you should know regarding how we work',
         img_small: article_4_small,
         img_large: article_4_large,
-        alt() {
-            return this.title.split(' ').slice(0, 3).join('_')
-        }
+        alt: 'article_4'
     },
 ]
 
@@ -71,8 +63,8 @@ export const Articles = (props) => {
                     {props.title}
                 </h2>
                 <div className={styles.articles__cards}>
-                    {cards.map(item=>
-                        <Article {...item} alt={item.alt()}/>
+                    {cards.map(card=>
+                        <Article {...card} key={card.id}/>
                     )}
                 </div>
             </div>

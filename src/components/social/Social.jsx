@@ -7,18 +7,12 @@ const links = [
     {id: 3, title: 'RSS', href: '#'},
 ]
 
-export const SocialItem = () => {
+export const Social = () => {
     return (
         links.map(item =>
             <div  key={item.id}>
                 <a className={style.socialLink} href={item.href}>{item.title}</a>
             </div>
         )
-    );
-};
-
-export const Social = () => {
-    return (
-        <SocialItem/>
     );
 };

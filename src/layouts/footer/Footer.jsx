@@ -1,8 +1,8 @@
 import React from 'react';
 import style from './Footer.module.scss';
-import {Logo} from '../../components/logo/Logo';
-import logo_light from '../../assets/image/svg/nordic_rose_logo_light.svg'
-import {Social} from "../../components/social/Social";
+import {Logo} from 'components/logo/Logo';
+import logo_light from 'assets/image/svg/nordic_rose_logo_light.svg'
+import {Social} from "components/social/Social";
 
 export const Footer = () => {
     const width = 217;
