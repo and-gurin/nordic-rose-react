@@ -72,7 +72,7 @@ export const Articles = (props) => {
                 </h2>
                 <div className={styles.articles__cards}>
                     {cards.map(item=>
-                        <Article {...item}/>
+                        <Article {...item} alt={item.alt()}/>
                     )}
                 </div>
             </div>
