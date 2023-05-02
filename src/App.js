@@ -1,11 +1,11 @@
 import React from "react";
-import {Header} from "./layouts/Header/Header";
+import {Main} from "./pages/main/Main";
 
 export function App() {
 
-  return (
-    <div>
-      <Header/>
-    </div>
-  );
+    return (
+        <div>
+            <Main/>
+        </div>
+    );
 }

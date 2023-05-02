@@ -1,0 +1,18 @@
+@import 'src/styles/sass/base/base';
+@import 'src/styles/sass/abstract/constans.scss';
+@import 'src/styles/sass/abstract/mixins.scss';
+@import 'src/styles/sass/abstract/placeholders.scss';
+
+.socialLink {
+  @extend %font-additional-1;
+  @include font(normal, 500, 1.3rem, 2.2rem);
+  text-align: center;
+  color: $color-light;
+  transition: 0.5s ease-out;
+  @include media-tablet {
+    @include font(normal, 500, 1.6rem, 2.7rem);
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}

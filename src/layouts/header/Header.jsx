@@ -1,9 +1,9 @@
 import React from 'react';
 import style from './Header.module.scss'
-import {Logo} from '../../components/logo/Logo';
-import logo_dark from '../../assets/image/svg/nordic_rose_logo_dark.svg'
-import {Navigation} from "../../components/nav/Navigation";
-import {Hamburger} from "../../components/hamburger/Hamburger";
+import {Logo} from 'components/logo/Logo';
+import logo_dark from 'assets/image/svg/nordic_rose_logo_dark.svg'
+import {Navigation} from "components/nav/Navigation";
+import {Hamburger} from "components/hamburger/Hamburger";
 
 export function Header() {
     const width = 217;
