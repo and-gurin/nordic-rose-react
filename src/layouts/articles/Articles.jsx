@@ -62,7 +62,7 @@ export const Articles = (props) => {
                 <h2 className={styles.articles__title}>
                     {props.title}
                 </h2>
-                <div className={styles.articles__cards}>
+                <div className={styles.articles__cards} style={{maxWidth: props.width}}>
                     {cards.map(card=>
                         <Article {...card} key={card.id}/>
                     )}

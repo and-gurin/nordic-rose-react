@@ -3,11 +3,12 @@
 @import 'styles/sass/abstract/mixins';
 @import 'styles/sass/abstract/placeholders';
 
+
 .post {
   position: relative;
 
   &:after {
-    //content: url('/src/image/svg/eyes.svg');
+    //content: url('assets/image/svg/eyes.svg');
     position: absolute;
     left: 50%;
     bottom: -125px;
@@ -97,7 +98,7 @@
 
     @include media-tablet {
       max-width: 640px;
-      margin: 0 auto 132px;
+      margin: 36px auto 132px;
     }
   }
 

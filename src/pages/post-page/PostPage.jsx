@@ -7,16 +7,17 @@ import {Post} from "layouts/post/Post";
 
 export function PostPage() {
 
-    const first = '1';
-    const second = '2';
+    const firstOrder = '1';
+    const secondOrder = '2';
     const height = '100%'
+    const width = '1080px'
 
     return (
         <div>
             <Header/>
-            <About first={first} second={second} height={height}/>
+            <About first={firstOrder} second={secondOrder} height={height}/>
             <Post/>
-            <Articles title={'All articles'}/>
+            <Articles title={'What to read next'} width={width}/>
             <Footer/>
         </div>
     );
