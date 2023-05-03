@@ -1,11 +1,13 @@
 import React from "react";
-import {Main} from "./pages/main/Main";
+import {MainPage} from "pages/main-page/MainPage";
+import {PostPage} from "pages/post-page/PostPage";
 
 export function App() {
 
     return (
         <div>
-            <Main/>
+            {/*<MainPage/>*/}
+            <PostPage/>
         </div>
     );
 }
