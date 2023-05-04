@@ -69,7 +69,6 @@ export function Post() {
             </div>
             <div className={style.author__wrapper_footer}>
                 <div className="author">
-
                         <img className={style.author__img_footer} src={author} alt="author" width="56"
                              height="56"/>
                         <span className={style.author__name_footer}>

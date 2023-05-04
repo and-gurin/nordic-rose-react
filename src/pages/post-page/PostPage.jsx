@@ -4,6 +4,7 @@ import {Articles} from "layouts/articles/Articles";
 import {Header} from "layouts/header/Header";
 import {Footer} from "layouts/footer/Footer";
 import {Post} from "layouts/post/Post";
+import {Newsletter} from "layouts/newsletter/Newsletter";
 
 export function PostPage() {
 
@@ -18,6 +19,7 @@ export function PostPage() {
             <About first={firstOrder} second={secondOrder} height={height}/>
             <Post/>
             <Articles title={'What to read next'} width={width}/>
+            <Newsletter/>
             <Footer/>
         </div>
     );
