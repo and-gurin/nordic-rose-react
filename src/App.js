@@ -1,11 +1,17 @@
-import React from "react";
-import {Main} from "./pages/main/Main";
+import React from 'react';
+import {MainPage} from 'pages/main-page/MainPage';
+import {PostPage} from 'pages/post-page/PostPage';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
 export function App() {
 
     return (
-        <div>
-            <Main/>
-        </div>
-    );
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<MainPage/>}/>
+                <Route path='/posts/:id' element={<PostPage/>}/>
+            </Routes>
+        </BrowserRouter>
+
+);
 }

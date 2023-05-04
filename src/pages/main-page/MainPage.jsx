@@ -4,7 +4,7 @@ import {Articles} from "layouts/articles/Articles";
 import {Header} from "layouts/header/Header";
 import {Footer} from "layouts/footer/Footer";
 
-export function Main() {
+export function MainPage() {
 
     return (
         <div>

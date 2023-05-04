@@ -1,0 +1,44 @@
+@import 'styles/sass/base/base';
+@import 'styles/sass/abstract/constans';
+@import 'styles/sass/abstract/mixins';
+@import 'styles/sass/abstract/placeholders';
+
+.socialTable {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  border-style: hidden;
+  border-radius: 4px;
+  box-shadow: 0 4px 4px 2px rgba(0, 0, 0, 0.25);
+
+  &__row {
+    border: 1px solid $color-border;
+    text-align: center;
+  }
+
+  &__ref {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: $color-dark;
+  }
+
+  &__caption {
+    display: none;
+    @extend %font-additional-1;
+    @include font(normal, 500, 1.6rem, 2.6rem);
+
+    @include media-tablet {
+      display: block;
+      margin-left: 16px;
+    }
+  }
+}
+
+.whatsapp {
+  display: table-cell;
+  @include media-tablet {
+    display: none;
+  }
+}

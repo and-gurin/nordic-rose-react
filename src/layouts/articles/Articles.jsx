@@ -8,6 +8,7 @@ import article_1_large from 'assets/image/articles/article-1-335w.png';
 import article_2_large from 'assets/image/articles/article-2-335w.png';
 import article_3_large from 'assets/image/articles/article-3-335w.png';
 import article_4_large from 'assets/image/articles/article-4-335w.png';
+import {Link} from "react-router-dom";
 
 const cards = [
     {
@@ -43,14 +44,16 @@ const cards = [
 const Article = ({id, title, img_small, img_large, alt}) => {
     return (
         <article className={styles.card} key={id}>
-            <picture>
-                <source media="(max-width: 859px)" srcSet={img_large}/>
-                <source media="(min-width: 860px)" srcSet={img_small}/>
-                <img src={img_large} alt={alt}/>
-            </picture>
-            <h3 className={styles.card__title}>
-                {title}
-            </h3>
+            <Link to={'/posts/' + id}>
+                <picture>
+                    <source media="(max-width: 859px)" srcSet={img_large}/>
+                    <source media="(min-width: 860px)" srcSet={img_small}/>
+                    <img src={img_large} alt={alt}/>
+                </picture>
+                <h3 className={styles.card__title}>
+                    {title}
+                </h3>
+            </Link>
         </article>
     )
 }
@@ -62,7 +65,7 @@ export const Articles = (props) => {
                 <h2 className={styles.articles__title}>
                     {props.title}
                 </h2>
-                <div className={styles.articles__cards}>
+                <div className={styles.articles__cards} style={{maxWidth: props.width}}>
                     {cards.map(card=>
                         <Article {...card} key={card.id}/>
                     )}

@@ -1,0 +1,81 @@
+@import 'styles/sass/base/base';
+@import 'styles/sass/abstract/constans';
+@import 'styles/sass/abstract/mixins';
+@import 'styles/sass/abstract/placeholders';
+
+.newsletter {
+  text-align: center;
+  @extend %font-additional-1;
+  @include font(normal, 400, 1.6rem, 2.2rem);
+  padding: 0 0 38px;
+  margin: 0 0 52px;
+  border-top: solid 10px $color-dark;
+  border-bottom: solid 2px $color-dark;
+
+  @include media-tablet {
+    max-width: 640px;
+    padding: 0 0 52px;
+    margin: 0 auto 59px;
+    border-left: solid 2px $color-dark;
+    border-right: solid 2px $color-dark;
+  }
+
+  &__title {
+    padding: 0 65px;
+    margin: 52px 0 14px;
+    @include media-tablet {
+      font-size: 3.6rem;
+      line-height: 2.8rem;
+      margin: 62px 0 18px;
+    }
+  }
+
+  &__subtitle {
+    padding: 0 36px;
+    margin: 0 0 33px;
+    @include media-tablet {
+      max-width: 538px;
+      font-size: 2.0rem;
+      line-height: 2.8rem;
+      margin: 0 auto 36px;
+    }
+  }
+
+  &__form {
+    @include flex(row, center, center, nowrap);
+  }
+
+  &__input {
+    width: 199px;
+    height: 40px;
+    font-family: inherit;
+    @include font(normal, 400, 1.6rem, 1.9rem);
+    background-color: transparent;
+    border: 2px solid $color-dark;
+    outline: 0;
+    padding: 0 12px;
+    @include media-tablet {
+      height: 50px;
+      font-size: 2.0rem;
+      line-height: 2.3rem;
+    }
+  }
+
+  &__button {
+    @extend %font-additional-1;
+    @include font(normal, 700, 1.6rem, 1.6rem);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    color: $color-light;
+    background-color: $color-dark;
+    padding: 12px;
+    border: 2px solid $color-dark;
+    @include media-tablet {
+      font-size: 2.0rem;
+      line-height: 2.3rem;
+      padding: 14px;
+      border: 1px solid $color-dark;
+    }
+  }
+}
