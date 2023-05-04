@@ -25,13 +25,20 @@
   }
 
   &__caption {
+    display: none;
     @extend %font-additional-1;
-    @include font(normal, 500, 1.4rem, 1.6rem);
+    @include font(normal, 500, 1.6rem, 2.6rem);
 
     @include media-tablet {
-      font-size: 1.6rem;
-      line-height: 2.6rem;
+      display: block;
       margin-left: 16px;
     }
+  }
+}
+
+.whatsapp {
+  display: table-cell;
+  @include media-tablet {
+    display: none;
   }
 }

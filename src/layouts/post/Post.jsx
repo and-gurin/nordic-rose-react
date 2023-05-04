@@ -1,10 +1,9 @@
 import React from 'react';
 import author from 'assets/image/jpg/author.jpg'
-import {SocialTableTwoColumn} from 'components/social-table/SocialTableTwoColumn';
+import {SocialTableFooter, SocialTableHeader} from 'components/social-table/SocialTable';
 import style from './Post.module.scss'
 import posImageSmall from 'assets/image/jpg/post-img-375w.jpg'
 import posImageLarge from 'assets/image/jpg/post-img-854w.jpg'
-import {SocialTableThreeColumn} from "components/social-table/SocialTableThreeColumn";
 
 export function Post() {
 
@@ -27,10 +26,7 @@ export function Post() {
                     </div>
                 </div>
                 <div className={style.headerTableWrapper}>
-                    <SocialTableTwoColumn/>
-                </div>
-                <div className={style.headerTableWrapper_twoRow}>
-                    <SocialTableThreeColumn/>
+                    <SocialTableHeader/>
                 </div>
             </div>
             <p className={style.post__body}>
@@ -64,10 +60,7 @@ export function Post() {
                 valuable contrast to cursory wisdom in some of the established channels.
             </p>
             <div className={style.footerTableWrapper}>
-                <SocialTableTwoColumn/>
-            </div>
-            <div className={style.footerTableWrapper_twoRow}>
-                <SocialTableThreeColumn/>
+                <SocialTableFooter/>
             </div>
             <div className={style.tags}>
                 Tags:
