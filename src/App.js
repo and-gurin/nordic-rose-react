@@ -1,5 +1,4 @@
 import React from 'react';
-import {MainPage} from 'pages/main-page/MainPage';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import {Header} from "layouts/header/Header";
 import {About} from "layouts/about/about";
@@ -17,21 +16,26 @@ export function App() {
 
     return (
         <BrowserRouter>
-            <Routes>
-                <Route path='/' element={<MainPage/>}/>
-                <Route path='/posts/*' element={
-                    <>
-                        <Header/>
-                        <About first={firstOrder} second={secondOrder} height={height}/>
-                        <Routes>
-                            <Route path='/:id' element={<Post/>}/>
-                        </Routes>
-                        <Articles title={'What to read next'} width={width}/>
-                        <Newsletter/>
-                        <Footer/>
-                    </>
-                }/>
-            </Routes>
+                <Header/>
+                <Routes>
+                    <Route path='/' element={
+                        <>
+                            <About/>
+                            <Articles title={'All articles'}/>
+                        </>
+                    }/>
+                    <Route path='/posts/*' element={
+                        <>
+                            <About first={firstOrder} second={secondOrder} height={height}/>
+                            <Routes>
+                                <Route path='/:id' element={<Post/>}/>
+                            </Routes>
+                            <Articles title={'What to read next'} width={width}/>
+                            <Newsletter/>
+                        </>
+                    }/>
+                </Routes>
+                <Footer/>
         </BrowserRouter>
-);
+    );
 }
