@@ -80,8 +80,8 @@ export const Articles = (props) => {
                     {props.title}
                 </h2>
                 <div className={styles.articles__cards} style={{maxWidth: props.width}}>
-                    {posts.map(card =>
-                        <Article {...card} key={card.id}/>
+                    {posts.map(post =>
+                        <Article {...post} key={post.id}/>
                     )}
                 </div>
             </div>
