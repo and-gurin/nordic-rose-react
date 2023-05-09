@@ -53,11 +53,16 @@
   @include flex(column, flex-start, center, nowrap);
 
   &__title {
-    margin: 20px 0 42px;
+    margin: 20px auto 42px;
     @extend %font-additional-1;
     @include font(normal, 500, 2.2rem, 2.6rem);
     text-align: center;
     max-width: 262px;
+  }
+
+  &__ref {
+    text-decoration: none;
+    color: $color-dark;
   }
 
 }

@@ -4,8 +4,21 @@ import {SocialTableFooter, SocialTableHeader} from 'components/social-table/Soci
 import style from './Post.module.scss'
 import posImageSmall from 'assets/image/jpg/post-img-375w.jpg'
 import posImageLarge from 'assets/image/jpg/post-img-854w.jpg'
+import {useEffect, useState} from "react";
+import {nordicAPI} from "api/api";
+import {useParams} from "react-router-dom";
 
 export function Post() {
+    const params = useParams();
+
+    const [post, setPost] = useState( {})
+
+    useEffect(() => {
+        nordicAPI.getPost(params.id)
+            .then((res) => {
+                setPost(res.data);
+            })
+    }, [])
 
     return (
         <section className={style.post}>
@@ -34,7 +47,7 @@ export function Post() {
                 sometimes totally bonkers stuff might be highly relevant if it has the right kind of thinking behind it.
             </p>
             <h4 className={style.post__title}>
-                Next on the pipeline
+                {post.title}
             </h4>
             <p className={style.post__body}>
                 This lovely web is full of everything which is created I don't know what in mind, considering that
