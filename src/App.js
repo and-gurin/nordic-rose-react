@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {HashRouter, Route, Routes} from 'react-router-dom';
 import {Header} from "layouts/header/Header";
 import {About} from "layouts/about/about";
 import {Post} from "layouts/post/Post";
@@ -15,7 +15,7 @@ export function App() {
     const width = '1080px'
 
     return (
-        <BrowserRouter>
+        <HashRouter>
                 <Header/>
                 <Routes>
                     <Route path='/' element={
@@ -36,6 +36,6 @@ export function App() {
                     }/>
                 </Routes>
                 <Footer/>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
