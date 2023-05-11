@@ -74,7 +74,7 @@ export const Articles = (props) => {
     }, [])
 
     return (
-        <section className={`${styles.articles} ${styles.articles_mainPage}`}>
+        <section id="articles" className={`${styles.articles} ${styles.articles_mainPage}`}>
             <div className={styles.articles__container}>
                 <h2 className={styles.articles__title}>
                     {props.title}
