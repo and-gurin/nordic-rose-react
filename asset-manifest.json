@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/nordic-rose-react/static/css/main.04b4141b.css",
-    "main.js": "/nordic-rose-react/static/js/main.a5d92701.js",
+    "main.js": "/nordic-rose-react/static/js/main.45515ebd.js",
     "static/media/post-img-854w.jpg": "/nordic-rose-react/static/media/post-img-854w.fcb4ac830f875486a0a0.jpg",
     "static/media/about_image-854w.svg": "/nordic-rose-react/static/media/about_image-854w.04027dde0e9893bb0cc8a9cc64c33cde.svg",
     "static/media/post-img-375w.jpg": "/nordic-rose-react/static/media/post-img-375w.b2c404b1ac0d1f6c3de0.jpg",
@@ -12,10 +12,10 @@
     "static/media/twitter.svg": "/nordic-rose-react/static/media/twitter.d0f7c47fdfa794f188f2cbdfa7d7ea7d.svg",
     "static/media/facebook.svg": "/nordic-rose-react/static/media/facebook.1a51d05afebc4a804f68beb9d7dbf384.svg",
     "main.04b4141b.css.map": "/nordic-rose-react/static/css/main.04b4141b.css.map",
-    "main.a5d92701.js.map": "/nordic-rose-react/static/js/main.a5d92701.js.map"
+    "main.45515ebd.js.map": "/nordic-rose-react/static/js/main.45515ebd.js.map"
   },
   "entrypoints": [
     "static/css/main.04b4141b.css",
-    "static/js/main.a5d92701.js"
+    "static/js/main.45515ebd.js"
   ]
 }
