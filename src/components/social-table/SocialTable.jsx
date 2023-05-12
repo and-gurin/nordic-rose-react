@@ -9,24 +9,32 @@ const socialLinks = [
         name: 'facebook',
         img: facebookImg,
         caption: 'Share on Facebook',
-        hrefShare: 'https://www.facebook.com/sharer/sharer.php?u=https://and-gurin.github.io/nordic-rose-react\" target=\"_blank',
+        hrefShare (shareUrl) {
+            return `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`
+        },
         href: 'https://www.facebook.com/andrei.hurynovich.18'
     },
     {
         name: 'twitter',
         img: twitterImg,
         caption: 'Share on Twitter',
-        hrefShare: 'https://twitter.com/share?text=Im Sharing on Twitter&url=https://and-gurin.github.io/nordic-rose-react',
+        hrefShare (shareUrl) {
+            return `https://twitter.com/share?text=Im Sharing on Twitter&url=${shareUrl}`
+        } ,
         href: 'https://twitter.com/and_gurin'
     },
     {
         name: 'whatsapp',
         img: whatsappImg,
         caption: '',
-        hrefShare: '',
+        hrefShare() {
+            return ''
+        },
         href: ''
     },
 ]
+
+
 
 
 export function SocialTableHeader() {
@@ -54,6 +62,9 @@ export function SocialTableHeader() {
 }
 
 export function SocialTableFooter() {
+
+    const currentUrl = window.location.href;
+
     return (
         <table className={style.socialTable}>
             <tbody>
@@ -64,7 +75,7 @@ export function SocialTableFooter() {
                                 <a rel='noreferrer'
                                    target='_blank'
                                    className={style.socialTable__ref}
-                                   href={link.href}>
+                                   href={link.hrefShare(currentUrl)}>
                                     <img src={link.img} alt={link.name} width="20px" height="20px"/>
                                     <span className={style.socialTable__caption}>{'    ' + link.caption}</span>
                                 </a>
