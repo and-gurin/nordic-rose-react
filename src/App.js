@@ -6,6 +6,7 @@ import {Post} from "layouts/post/Post";
 import {Articles} from "layouts/articles/Articles";
 import {Newsletter} from "layouts/newsletter/Newsletter";
 import {Footer} from "layouts/footer/Footer";
+import {ScrollToTop} from "components/scroll-to-top/ScrollToTop";
 
 export function App() {
 
@@ -16,6 +17,7 @@ export function App() {
 
     return (
         <HashRouter>
+            <ScrollToTop/>
                 <Header/>
                 <Routes>
                     <Route path='/' element={
