@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {HashRouter, Route, Routes} from 'react-router-dom';
 import {Header} from "layouts/header/Header";
 import {About} from "layouts/about/about";
@@ -12,8 +12,8 @@ export function App() {
 
     const firstOrder = '1';
     const secondOrder = '2';
-    const height = '100%'
-    const width = '1080px'
+    const height = '100%';
+    const width = '1080px';
 
     return (
         <HashRouter>

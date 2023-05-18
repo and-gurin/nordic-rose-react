@@ -9,27 +9,21 @@ const socialLinks = [
         name: 'facebook',
         img: facebookImg,
         caption: 'Share on Facebook',
-        hrefShare (shareUrl) {
-            return `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`
-        },
+        hrefShare:`https://www.facebook.com/sharer/sharer.php?u=`,
         href: 'https://www.facebook.com/andrei.hurynovich.18'
     },
     {
         name: 'twitter',
         img: twitterImg,
         caption: 'Share on Twitter',
-        hrefShare (shareUrl) {
-            return `https://twitter.com/share?text=Im Sharing on Twitter&url=${shareUrl}`
-        } ,
+        hrefShare: `https://twitter.com/share?text=Im Sharing on Twitter&url=`,
         href: 'https://twitter.com/and_gurin'
     },
     {
         name: 'whatsapp',
         img: whatsappImg,
         caption: '',
-        hrefShare() {
-            return ''
-        },
+        hrefShare: '',
         href: ''
     },
 ]
@@ -70,12 +64,13 @@ export function SocialTableFooter() {
             <tbody>
             <tr>
                 {socialLinks.map(link => {
+                    const href = link.hrefShare ? `${link.hrefShare}${currentUrl}` : '';
                         return (
                             <td key={link.name} className={style[link.name] + ' ' + style.socialTable__row}>
                                 <a rel='noreferrer'
                                    target='_blank'
                                    className={style.socialTable__ref}
-                                   href={link.hrefShare(currentUrl)}>
+                                   href={href}>
                                     <img src={link.img} alt={link.name} width="20px" height="20px"/>
                                     <span className={style.socialTable__caption}>{'    ' + link.caption}</span>
                                 </a>
