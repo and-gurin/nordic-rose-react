@@ -20,6 +20,13 @@ export const Footer = () => {
                 <span className={style.brightString}>Suspense</span>
                 <span className={style.dimString}>Growth</span>
                 <span className={style.brightString}>UX Design</span>
+                <span className={style.dimString}>Remote Work</span>
+                <span className={style.brightString}>UX Design</span>
+                <span className={style.dimString}>Distributed Teams</span>
+                <span className={style.brightString}>Creativity</span>
+                <span className={style.dimString}>Strategy</span>
+                <span className={style.brightString}>Suspense</span>
+                <span className={style.dimString}>Growth</span>
             </div>
             <div className={style.footer__container}>
                 <div className={style.footer__logo}>

@@ -4,7 +4,7 @@ import style from './Navigation.module.scss'
 const links = [
     {id: 1, title: 'Blog', href: '#'},
     {id: 2, title: 'About', href: '#about'},
-    {id: 3, title: 'Links', href: '#links'},
+    {id: 3, title: 'Links', href: '#articles'},
     {id: 4, title: 'Projects', href: '#projects'},
 ]
 

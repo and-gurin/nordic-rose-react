@@ -63,6 +63,11 @@
   }
 }
 
+p strong {
+    @extend %font-additional-1;
+    @include font(normal, 700, 2.6rem, 3.1rem);
+}
+
 .authorSocialWrapper {
   border-top: solid $color-dark 2px;
   margin: 0 20px;
