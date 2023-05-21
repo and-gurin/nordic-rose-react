@@ -36,6 +36,12 @@ export function App() {
                             <Newsletter/>
                         </>
                     }/>
+                    <Route path='/about/' element={
+                        <About/>
+                    }/>
+                    <Route path='/links/' element={
+                        <Articles title={'All articles'}/>
+                    }/>
                 </Routes>
                 <Footer/>
         </HashRouter>

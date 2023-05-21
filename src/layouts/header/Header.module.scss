@@ -23,8 +23,10 @@
     @include flex(row, center, center, nowrap);
   }
 
-  &__hamburger {
+  &__burger {
+    display: block;
     margin-left: auto;
+    cursor: pointer;
     @include media-tablet {
       display: none;
     }
