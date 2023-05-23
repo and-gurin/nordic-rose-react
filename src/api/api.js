@@ -1,9 +1,9 @@
 import axios from 'axios'
 
 export const nordicAPI = {
-    getPosts() {
+    getPosts(page, pageSize) {
         return  axios.get(
-            `https://dolphin-app-cbjj4.ondigitalocean.app/users/ag_2002/posts`
+            `https://dolphin-app-cbjj4.ondigitalocean.app/users/ag_2002/posts?page=${page}&page_size=${pageSize}`
         )
     },
     getPost(post_id) {
@@ -11,4 +11,10 @@ export const nordicAPI = {
             `https://dolphin-app-cbjj4.ondigitalocean.app/posts/${post_id}`
         )
     },
+    saveEmail (email) {
+        return axios.post(
+            `https://dolphin-app-cbjj4.ondigitalocean.app/users/ag_2002/subscribers`,
+            email
+        )
+    }
 }

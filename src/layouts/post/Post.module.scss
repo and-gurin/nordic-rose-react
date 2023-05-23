@@ -7,18 +7,6 @@
 .post {
   position: relative;
 
-  &:after {
-    //content: url('assets/image/svg/eyes.svg');
-    position: absolute;
-    left: 50%;
-    bottom: -125px;
-    transform: translateX(-50%);
-
-    @include media-tablet {
-      bottom: -165px;
-    }
-  }
-
   &__body {
     @extend %font-secondary;
     @include font(normal, 400, 1.6rem, 2.7rem);
@@ -59,6 +47,16 @@
       font-size: 1.6rem;
       line-height: 2.2rem;
       margin: 12px auto 52px;
+    }
+  }
+  &__eyes {
+    position: absolute;
+    left: 50%;
+    bottom: -125px;
+    transform: translateX(-50%);
+
+    @include media-tablet {
+      bottom: -165px;
     }
   }
 }
@@ -128,7 +126,7 @@ p strong {
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 1.4px;
-    line-height: 22px;
+    line-height: 36px;
   }
 
   &__description_header {
