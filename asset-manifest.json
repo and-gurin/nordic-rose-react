@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/nordic-rose-react/static/css/main.9cf4876a.css",
-    "main.js": "/nordic-rose-react/static/js/main.36219e41.js",
+    "main.css": "/nordic-rose-react/static/css/main.a269b315.css",
+    "main.js": "/nordic-rose-react/static/js/main.d40f64cf.js",
     "static/media/about_image-854w.svg": "/nordic-rose-react/static/media/about_image-854w.04027dde0e9893bb0cc8a9cc64c33cde.svg",
     "static/media/author.jpg": "/nordic-rose-react/static/media/author.e8a3ed1aa2729955c195.jpg",
     "static/media/nordic_rose_logo_dark.svg": "/nordic-rose-react/static/media/nordic_rose_logo_dark.6689545d018b37265589891b18763adc.svg",
@@ -13,11 +13,11 @@
     "static/media/twitter.svg": "/nordic-rose-react/static/media/twitter.d0f7c47fdfa794f188f2cbdfa7d7ea7d.svg",
     "static/media/facebook.svg": "/nordic-rose-react/static/media/facebook.1a51d05afebc4a804f68beb9d7dbf384.svg",
     "static/media/burger.svg": "/nordic-rose-react/static/media/burger.0443214e1a1157759048e58c0719ddbe.svg",
-    "main.9cf4876a.css.map": "/nordic-rose-react/static/css/main.9cf4876a.css.map",
-    "main.36219e41.js.map": "/nordic-rose-react/static/js/main.36219e41.js.map"
+    "main.a269b315.css.map": "/nordic-rose-react/static/css/main.a269b315.css.map",
+    "main.d40f64cf.js.map": "/nordic-rose-react/static/js/main.d40f64cf.js.map"
   },
   "entrypoints": [
-    "static/css/main.9cf4876a.css",
-    "static/js/main.36219e41.js"
+    "static/css/main.a269b315.css",
+    "static/js/main.d40f64cf.js"
   ]
 }
