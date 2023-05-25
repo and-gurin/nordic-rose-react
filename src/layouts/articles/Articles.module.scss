@@ -39,6 +39,10 @@
     }
   }
 
+  &__pagination {
+    text-align: center;
+  }
+
   &__cards_post {
     @include flex(column, flex-start, flex-start, nowrap);
     @include media-tablet {

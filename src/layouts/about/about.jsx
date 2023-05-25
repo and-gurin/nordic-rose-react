@@ -6,7 +6,7 @@ export function About(props) {
 
     return (
         <section id="about" className={style.about}>
-            <img className={style.about__image} style={{order: props.second, height: props.height}} width='854' height='533'
+            <img className={style.about__image} style={{order: props.second, height: props.height}}
                  src={about_image_large} alt="about"/>
             <div className={style.about__container} style={{order: props.first}}>
                 <h1 className={style.about__title}>

@@ -3,8 +3,9 @@ import author from 'assets/image/jpg/author.jpg'
 import {SocialTableFooter, SocialTableHeader} from 'components/social-table/SocialTable';
 import style from './Post.module.scss'
 import {useEffect, useState} from "react";
-import {nordicAPI} from "api/api";
-import {useParams} from "react-router-dom";
+import {nordicAPI} from 'api/api';
+import {useParams} from 'react-router-dom';
+import eyes from 'assets/image/svg/eyes.svg'
 
 export function Post() {
     const params = useParams();
@@ -43,7 +44,7 @@ export function Post() {
                              height="56"/>
                         <div>
                             <p className={style.author__name_header}>
-                                Andrei Hurynovich
+                                {'Andrei Hurynovich'}
                             </p>
                             <p className={style.author__description_header}>
                                 <time>{datetime + ' '}</time>
@@ -77,17 +78,18 @@ export function Post() {
                 Tags: {tags}
             </div>
             <div className={style.author__wrapper_footer}>
-                <div className="author">
+                <div >
                     <img className={style.author__img_footer} src={author} alt="author" width="56"
                          height="56"/>
                     <span className={style.author__name_footer}>
-                        Mika Matikainen
+                        {'Andrei Hurynovich  '}
                     </span>
                     <span className={style.author__description_footer}>
-                        is a Design Founder & Advisor, Berlin School of Creative Leadership Executive MBA participant, Zippie advisor, Wolt co-founder, and Nordic Rose stakeholder.
+                        {'is a Front-end developer, current stack includes: react, redux, typescript REST Api. Nordic Rose stakeholder.'}
                     </span>
                 </div>
             </div>
+            <img className={style.post__eyes} width='52' height='65' src={eyes} alt="eyes"/>
         </section>
     )
 }

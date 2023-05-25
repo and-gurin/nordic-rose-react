@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import styles from './Articles.module.scss';
-import {Link} from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import {nordicAPI} from "api/api";
 import {Pagination} from "components/pagination/Pagination";
 
@@ -8,7 +8,7 @@ const Article = ({id, title, thumbnail_url}) => {
 
     return (
         <article className={styles.card} key={id}>
-            <Link className={styles.card__ref} to={'/posts/' + id}>
+            <NavLink className={styles.card__ref} to={'/posts/' + id}>
                 <picture>
                     <source media="(max-width: 859px)" srcSet={thumbnail_url}/>
                     <source media="(min-width: 860px)" srcSet={thumbnail_url}/>
@@ -17,7 +17,7 @@ const Article = ({id, title, thumbnail_url}) => {
                 <h3 className={styles.card__title}>
                     {title}
                 </h3>
-            </Link>
+            </NavLink>
         </article>
     )
 }
@@ -26,21 +26,21 @@ export const Articles = (props) => {
 
     const [posts, setPosts] = useState( [])
     const [offset, setOffset] = useState(0);
-    const perPage = 7;
+    const pageSize = 7;
     const [pageCount, setPageCount] = useState(0)
 
     useEffect(() => {
-        nordicAPI.getPosts()
+        nordicAPI.getPosts(offset, pageSize)
             .then((res) => {
-                const slice = res.data.slice(offset, offset + perPage);
-                setPosts(slice);
-                setPageCount(Math.ceil(res.data.length / perPage))
+                console.log(res)
+                setPosts(res.data.posts);
+                setPageCount(res.data.total_pages)
             })
     }, [offset])
 
     const handlePageClick = (e) => {
         const selectedPage = e.selected;
-        setOffset(selectedPage + 1)
+        setOffset(selectedPage+1)
     };
 
     return (
@@ -54,7 +54,9 @@ export const Articles = (props) => {
                         <Article {...post} key={post.id}/>
                     )}
                 </div>
-                <Pagination pageCount={pageCount} handlePageClick={(e)=>handlePageClick(e)}/>
+                <div className={styles.articles__pagination}>
+                    <Pagination pageCount={pageCount} handlePageClick={(e)=>handlePageClick(e)}/>
+                </div>
             </div>
         </section>
     );
