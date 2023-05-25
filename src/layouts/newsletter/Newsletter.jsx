@@ -42,9 +42,9 @@ export function Newsletter() {
                        onBlur={formik.handleBlur}
                        placeholder="Enter your email..."/>
                 <button className={style.newsletter__button} type={'submit'}>Sign Up</button>
-                {formik.touched.email && formik.errors.email
-                    ? <div style={{color: 'red'}}>{formik.errors.email}</div> : null}
             </form>
+            {formik.touched.email && formik.errors.email
+                ? <div style={{color: 'red'}}>{formik.errors.email}</div> : null}
         </section>
     );
 }
