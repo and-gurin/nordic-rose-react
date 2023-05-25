@@ -44,7 +44,7 @@ export function Post() {
                              height="56"/>
                         <div>
                             <p className={style.author__name_header}>
-                                {'Andrei Hurynovich'}
+                                Andrei Hurynovich
                             </p>
                             <p className={style.author__description_header}>
                                 <time>{datetime + ' '}</time>
@@ -82,10 +82,10 @@ export function Post() {
                     <img className={style.author__img_footer} src={author} alt="author" width="56"
                          height="56"/>
                     <span className={style.author__name_footer}>
-                        {'Andrei Hurynovich  '}
+                        Andrei Hurynovich&nbsp;
                     </span>
                     <span className={style.author__description_footer}>
-                        {'is a Front-end developer, current stack includes: react, redux, typescript REST Api. Nordic Rose stakeholder.'}
+                        is a Front-end developer, current stack includes: react, redux, typescript REST Api. Nordic Rose stakeholder.
                     </span>
                 </div>
             </div>

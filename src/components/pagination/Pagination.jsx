@@ -8,11 +8,12 @@ export const Pagination = (props) => {
             <ReactPaginate
                 previousLabel={"prev"}
                 nextLabel={"next"}
+                forcePage={props.page}
                 breakLabel={"..."}
                 pageCount={props.pageCount}
                 marginPagesDisplayed={2}
                 pageRangeDisplayed={5}
-                onPageChange={props.handlePageClick}
+                onPageChange={props.onChange}
                 breakClassName={"break-me"}
                 containerClassName={style.pagination}
                 subContainerClassName={"pages pagination"}
