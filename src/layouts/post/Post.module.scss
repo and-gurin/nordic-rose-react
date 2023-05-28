@@ -175,6 +175,7 @@ p strong {
 
   &__ref {
     color: $color-dark;
+    margin-right: 10px;
 
     &:hover {
       text-decoration: none;
@@ -186,5 +187,9 @@ p strong {
     line-height: 2.0rem;
     max-width: 640px;
     margin: 0 auto;
+    text-align: center;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }

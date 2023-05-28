@@ -85,7 +85,8 @@ export function Post() {
                         Andrei Hurynovich&nbsp;
                     </span>
                     <span className={style.author__description_footer}>
-                        is a Front-end developer, current stack includes: react, redux, typescript REST Api. Nordic Rose stakeholder.
+                        is a Front-end developer with a passion of art, current stack includes: react, redux, typescript REST Api.
+                        Current art stack: modern, romanticism, golden age. Nordic Rose stakeholder.
                     </span>
                 </div>
             </div>

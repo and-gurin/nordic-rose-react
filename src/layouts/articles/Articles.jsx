@@ -3,6 +3,7 @@ import styles from './Articles.module.scss';
 import {NavLink, useSearchParams} from "react-router-dom";
 import {nordicAPI} from "api/api";
 import {Pagination} from "components/pagination/Pagination";
+import stylePost from 'layouts/post/Post.module.scss'
 
 const Article = ({id, title, thumbnail_url}) => {
 
@@ -29,9 +30,18 @@ export const Articles = (props) => {
     const pageSize = 10;
     const [pageCount, setPageCount] = useState(0)
     const [searchParams, setSearchParams] = useSearchParams()
+    const [tag, setTag] = useState(null)
 
-    const sendQuery = (page, pageSize) => {
-        nordicAPI.getPosts(page, pageSize)
+    const allTags = ['Leighton', 'England', 'historical', 'Hoch', 'Holland', 'Klimt', 'Austria', 'landscape','portrait', 'erotic', 'mythology']
+    const tags = allTags.map(tag => <a key={tag}
+                                onClick={(e)=>handleTagClick(e)}
+                                className={stylePost.tags__ref}
+                                href="#">{tag}
+        </a>
+    )
+
+    const sendQuery = (page, pageSize, tag) => {
+        nordicAPI.getPosts(page, pageSize, tag)
             .then((res) => {
                 if (res) {
                     setPageCount(Math.ceil(res.data.total_pages));
@@ -45,16 +55,23 @@ export const Articles = (props) => {
 
         setPage(newPage);
 
-        sendQuery(newPage, pageSize)
-        setSearchParams({page: String(newPage), count: String(pageSize)})
-
+        sendQuery(newPage, pageSize, tag)
+        setSearchParams({page: String(newPage), tag})
     };
+
+    const handleTagClick = (e) => {
+        const newtTag = '&tag=' + e.target.innerText;
+        setTag(newtTag);
+        setPage(1);
+        sendQuery(page, pageSize, newtTag);
+        setSearchParams({page: String(1), tag: newtTag});
+    }
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
-        const page = params.page;
-        sendQuery(page, pageSize);
-        setPage(+page || 1)
+        sendQuery(params.page, pageSize, params.tag);
+        setPage(+params.page || 1)
+        setTag(+params.tag || null)
     }, [])
 
     return (
@@ -63,6 +80,14 @@ export const Articles = (props) => {
                 <h2 className={styles.articles__title}>
                     {props.title}
                 </h2>
+                <div  style={{borderBottom: 'none'}} className={stylePost.tags}>
+                    Tags:&nbsp;&nbsp;
+                    <a onClick={() => sendQuery(page, pageSize, null)}
+                       className={stylePost.tags__ref}
+                       href="#">{'ALL'}
+                    </a>
+                    {tags}
+                </div>
                 <div className={styles.articles__cards} style={{maxWidth: props.width}}>
                     {posts.map(post =>
                         <Article {...post} key={post.id}/>
