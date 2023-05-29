@@ -7,7 +7,7 @@ import {nordicAPI} from 'api/api';
 import {useParams} from 'react-router-dom';
 import eyes from 'assets/image/svg/eyes.svg'
 
-export function Post() {
+export function Post(props) {
     const params = useParams();
     const postId = params.id;
 
@@ -31,8 +31,16 @@ export function Post() {
         ? Math.round(post.content.replace(/(<([^>]+)>)/ig, '').length / 250)
         : 'few'
 
+    const handleClick = (e) => {
+        props.handleTagClick(e)
+    }
+
     const tags = !isLoading
-        ? post.all_tags_list.map(tag => <a key={tag} className={style.tags__ref} href="#">{'  ' + tag}</a>)
+        ? post.all_tags_list.map(tag =>
+            <a key={tag}
+               onClick={(e)=>handleClick(e)}
+               className={style.tags__ref}
+               href="#">{'  ' + tag}</a>)
         : 'wait';
 
     return (
