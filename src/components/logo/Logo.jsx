@@ -10,6 +10,7 @@ export function Logo(props) {
                  width={props.width}
                  height={props.height}
                  alt="logo"/>
+            
         </NavLink>
     )
 }

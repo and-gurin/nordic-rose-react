@@ -4,15 +4,16 @@ import {SocialTableFooter, SocialTableHeader} from 'components/social-table/Soci
 import style from './Post.module.scss'
 import {useEffect, useState} from "react";
 import {nordicAPI} from 'api/api';
-import {useParams} from 'react-router-dom';
+import {NavLink, useParams} from 'react-router-dom';
 import eyes from 'assets/image/svg/eyes.svg'
 
-export function Post() {
+export function Post(props) {
     const params = useParams();
     const postId = params.id;
 
     const [post, setPost] = useState({})
     const [isLoading, setLoading] = useState(true)
+    console.log(post.content)
 
     useEffect(() => {
         nordicAPI.getPost(postId)
@@ -31,8 +32,15 @@ export function Post() {
         ? Math.round(post.content.replace(/(<([^>]+)>)/ig, '').length / 250)
         : 'few'
 
+    const handleClick = (e) => {
+        props.handleTagClick(e)
+    }
+
     const tags = !isLoading
-        ? post.all_tags_list.map(tag => <a key={tag} className={style.tags__ref} href="#">{'  ' + tag}</a>)
+        ? post.all_tags_list.map(tag =>
+            <NavLink to={'/links'} key={tag} onClick={(e)=>handleClick(e)} className={style.tags__ref}>
+                {'  ' + tag}
+            </NavLink>)
         : 'wait';
 
     return (
@@ -85,7 +93,8 @@ export function Post() {
                         Andrei Hurynovich&nbsp;
                     </span>
                     <span className={style.author__description_footer}>
-                        is a Front-end developer, current stack includes: react, redux, typescript REST Api. Nordic Rose stakeholder.
+                        is a Front-end developer with a passion of art, current stack includes: react, redux, typescript REST Api.
+                        Current art stack: modern, romanticism, golden age. Nordic Rose stakeholder.
                     </span>
                 </div>
             </div>

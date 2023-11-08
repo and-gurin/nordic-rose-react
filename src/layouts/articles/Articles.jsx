@@ -1,10 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import styles from './Articles.module.scss';
-import {NavLink, useSearchParams} from "react-router-dom";
-import {nordicAPI} from "api/api";
+import {NavLink} from "react-router-dom";
 import {Pagination} from "components/pagination/Pagination";
 
-const Article = ({id, title, thumbnail_url}) => {
+export const Article = ({id, title, thumbnail_url}) => {
 
     return (
         <article className={styles.card} key={id}>
@@ -23,53 +22,17 @@ const Article = ({id, title, thumbnail_url}) => {
 }
 
 export const Articles = (props) => {
-
-    const [posts, setPosts] = useState([])
-    const [page, setPage] = useState(1)
-    const pageSize = 10;
-    const [pageCount, setPageCount] = useState(0)
-    const [searchParams, setSearchParams] = useSearchParams()
-
-    const sendQuery = (page, pageSize) => {
-        nordicAPI.getPosts(page, pageSize)
-            .then((res) => {
-                if (res) {
-                    setPageCount(Math.ceil(res.data.total_pages));
-                    setPosts(res.data.posts);
-                }
-            })
-    }
-
-    const handlePageClick = (e) => {
-        const newPage = (e.selected * pageSize) % pageCount + 1;
-
-        setPage(newPage);
-
-        sendQuery(newPage, pageSize)
-        setSearchParams({page: String(newPage), count: String(pageSize)})
-
-    };
-
-    useEffect(() => {
-        const params = Object.fromEntries(searchParams)
-        const page = params.page;
-        sendQuery(page, pageSize);
-        setPage(+page || 1)
-    }, [])
-
     return (
-        <section id="articles" className={`${styles.articles} ${styles.articles_mainPage}`}>
+        <section className={`${styles.articles} ${styles.articles_mainPage}`}>
             <div className={styles.articles__container}>
                 <h2 className={styles.articles__title}>
                     {props.title}
                 </h2>
                 <div className={styles.articles__cards} style={{maxWidth: props.width}}>
-                    {posts.map(post =>
-                        <Article {...post} key={post.id}/>
-                    )}
+                    {props.posts}
                 </div>
                 <div className={styles.articles__pagination}>
-                    <Pagination pageCount={pageCount} page={page - 1} onChange={(e) => handlePageClick(e)}/>
+                    <Pagination pageCount={props.pageCount} page={props.page - 1} onChange={props.handlePageClick}/>
                 </div>
             </div>
         </section>

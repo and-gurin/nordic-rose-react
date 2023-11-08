@@ -26,6 +26,7 @@
 
   &__container {
     margin: 0 auto;
+    text-align: center;
     @include media-tablet {
       @include flex(column, center, center, nowrap);
     }
