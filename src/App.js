@@ -47,15 +47,18 @@ export function App() {
         const newtTag = '&tag=' + e.target.innerText;
         setTag(newtTag);
         setPage(1);
-        sendQuery(page, pageSize, newtTag);
+        sendQuery(1, pageSize, newtTag);
         setSearchParams({page: String(1), tag: newtTag});
+        console.log(newtTag)
+        console.log(tag)
     }
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
-        sendQuery(params.page, pageSize, params.tag);
+        sendQuery(params.page, pageSize, tag);
         setPage(+params.page || 1)
         setTag(params.tag || '')
+        console.log(params.page)
     }, [])
 
     const allPosts = posts.map(post => <Article {...post} key={post.id}/>)
@@ -71,7 +74,7 @@ export function App() {
                         <Articles title={'All articles'}
                                   handlePageClick={handlePageClick}
                                   posts={allPosts}
-                                  page={page}
+                                  page={1}
                                   pageCount={pageCount}/>
                     </>
                 }/>
@@ -83,7 +86,7 @@ export function App() {
                         </Routes>
                         <Articles handlePageClick={handlePageClick}
                                   posts={allPosts}
-                                  page={page}
+                                  page={1}
                                   pageCount={pageCount}
                                   title={'What to read next'}
                                   width={width}/>
@@ -93,10 +96,10 @@ export function App() {
                 <Route path='/about/' element={
                     <About/>
                 }/>
-                <Route path='/links/' element={
+                <Route path='/links/*' element={
                     <Articles title={'All articles'}
                               handlePageClick={handlePageClick}
-                              posts={posts}
+                              posts={allPosts}
                               page={page}
                               pageCount={pageCount}/>
                 }/>

@@ -4,7 +4,7 @@ import {SocialTableFooter, SocialTableHeader} from 'components/social-table/Soci
 import style from './Post.module.scss'
 import {useEffect, useState} from "react";
 import {nordicAPI} from 'api/api';
-import {useParams} from 'react-router-dom';
+import {NavLink, useParams} from 'react-router-dom';
 import eyes from 'assets/image/svg/eyes.svg'
 
 export function Post(props) {
@@ -13,6 +13,7 @@ export function Post(props) {
 
     const [post, setPost] = useState({})
     const [isLoading, setLoading] = useState(true)
+    console.log(post.content)
 
     useEffect(() => {
         nordicAPI.getPost(postId)
@@ -37,10 +38,9 @@ export function Post(props) {
 
     const tags = !isLoading
         ? post.all_tags_list.map(tag =>
-            <a key={tag}
-               onClick={(e)=>handleClick(e)}
-               className={style.tags__ref}
-               href="#">{'  ' + tag}</a>)
+            <NavLink to={'/links'} key={tag} onClick={(e)=>handleClick(e)} className={style.tags__ref}>
+                {'  ' + tag}
+            </NavLink>)
         : 'wait';
 
     return (

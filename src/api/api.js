@@ -1,9 +1,9 @@
 import axios from 'axios'
 
 export const nordicAPI = {
-    getPosts(page, pageSize, tag) {
+    getPosts(page, pageSize, tag='') {
         return  axios.get(
-            `https://dolphin-app-cbjj4.ondigitalocean.app/users/ag_2002/posts?page=${page}&page_size=${pageSize}${tag ? tag : ''}`
+            `https://dolphin-app-cbjj4.ondigitalocean.app/users/ag_2002/posts?page=${page}&page_size=${pageSize}${tag}`
         )
     },
     getPost(post_id) {
